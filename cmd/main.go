@@ -80,7 +80,7 @@ func (h httpHandler) uploader(w http.ResponseWriter, r *http.Request) {
 	} else if data.Body != "" {
 
 		hash = hasher(data.Body)
-		fileStorePath := hash[:7] + ".txt"
+		fileStorePath := hash[:7] + ".txt" // random file name
 		_, err := h.hash.Get(hash)
 		if err != nil {
 			// body was passed so create a new file

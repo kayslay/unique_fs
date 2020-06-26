@@ -26,7 +26,9 @@ type ExampleFs struct {
 }
 
 func (e ExampleFs) Create(p string, r io.Reader) error {
+	//sleeping for 3s to make creating files slow
 	time.Sleep(time.Second * 3)
+
 	f, err := os.Create(path.Join(root, p))
 	if err != nil {
 		return err
